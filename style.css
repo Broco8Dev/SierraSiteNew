@@ -3,13 +3,13 @@
     --background-color: #F2F2F7;
     --text-color: #1C1C1E;
     --card-background: #FFFFFF;
-    --navbar-margin: 60px;
+    --navbar-margin: 40px;
     --navbar-margin-top: 13px;
 }
 
 @font-face {
     font-family: 'SF Pro';
-    src: url('assets/SF-Pro.ttf') format('truetype');
+    src: url('assets/fonts/SF-Pro.ttf') format('truetype');
     font-stretch: 0 1000;
     font-weight: 100 900;
     font-style: normal;
@@ -19,7 +19,7 @@
     font-family: 'SF Pro', sans-serif;
     animation: auto;
     text-decoration: none;
-    transition: all;
+    transition: all 0.9s ease;
 }
 
 body {
@@ -29,9 +29,13 @@ body {
     padding: 0;
 }
 
+body, html{
+    overflow-x: hidden;
+}
+
 .navbar {
     background-color: var(--card-background);
-    padding: 1rem;
+   
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.055);
     position: sticky;
     width: calc(100% - var(--navbar-margin));
@@ -39,7 +43,7 @@ body {
     top: 0;
     border-radius: 17px;
     z-index: 1000;
-    height: 10px;
+    height: 40px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -49,12 +53,14 @@ body {
     margin-left: auto;
     display: flex;
     gap: 1.5rem;
+    margin-right: 15px;
 }
 
 .navbar-links a {
     color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s ease;
+
 }
 
 .navbar-links a:hover {
@@ -116,8 +122,8 @@ display: none;
 .navbar img {
     width: 30px;
     height: auto;   
-    border-radius: 10px;
-    transform: translateX(-8px);
+    border-radius: 12px;
+    margin-left: 5px;
 }
 
 .navbar h1 {
@@ -279,6 +285,7 @@ display: none;
 .previews {
     display: flex;
     flex-direction: row;
+    overflow-x: scroll;
 }
 
 .app-preview img {
@@ -286,4 +293,52 @@ display: none;
     max-width: 100%;
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.navbar-toggle {
+    margin-left: auto;
+    display: none;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    font-size: 15px;
+    background: none;
+    margin-right: 15px;
+    font-weight: 600;
+}
+
+
+@media screen and (max-width: 468px) {
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: calc(100% - var(--navbar-margin));
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 100;
+        margin-top: 10px;
+        background-color: var(--card-background);
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .navbar-links.active {
+        display: flex;
+        border-radius: 10px;
+    
+    }
+
+    .container.active {
+        margin-top: 250px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+    }
 }

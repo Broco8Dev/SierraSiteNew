@@ -14,6 +14,9 @@
     <div class="centered">
         <nav class="navbar">
             <img src='assets/icon.jpg' alt="Sierra logo">
+            <button class="navbar-toggle">
+                <span class="navbar-toggle-icon">􀌇</span>
+            </button>
             <div class="navbar-links">
                 <a href="#features">Features</a>
                 <a href="#tutorial">Tutorial</a>
@@ -25,7 +28,7 @@
     </div>
 
     <div class="container">
-        <section class="hero">
+        <section class="hero"  style="z-index: -1;">
             <h2>Sierra: Your Third Party App Store</h2>
             <p>Browse, manage, and sideload IPA files with ease on your iOS device.</p>
             <button onclick="switchPage('download.html')" class="cta-button">Download Sierra</button>
@@ -153,6 +156,36 @@
                 });
             });
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const navbarLinks = document.querySelector('.navbar-links');
+    const container = document.querySelector('.container');
+
+    navbarToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navbarLinks.classList.toggle('active');
+        container.classList.toggle('active');
+    });
+
+    navbarLinks.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') {
+            setTimeout(() => {
+                navbarLinks.classList.remove('active');
+                container.classList.remove('active');
+            }, 300);
+        }
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!navbarLinks.contains(e.target) && !navbarToggle.contains(e.target)) {
+            setTimeout(() => {
+                navbarLinks.classList.remove('active');
+                container.classList.remove('active');
+            }, 300);
+        }
+    });
+});
         </script>
 </body>
 </html>
