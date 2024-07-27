@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Sierra</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="centered">
+        <nav class="navbar">
+            <img src='assets/icon.jpg' alt="Sierra logo">
+            <div class="navbar-links">
+                <a href="#features">Features</a>
+                <a href="#tutorial">Tutorial</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#faq">FAQ</a>
+                <a href="#giveaways">Giveaways</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <section class="hero">
+            <h2>Sierra: Your Third Party App Store</h2>
+            <p>Browse, manage, and sideload IPA files with ease on your iOS device.</p>
+            <button onclick="switchPage('download.html')" class="cta-button">Download Sierra</button>
+        </section>
+
+        <h2>Key Features</h2>
+        <section id="features" class="features section">
+       
+                <div class="feature-card">
+                    <h3>􀈮 Browse IPA Files</h3>
+                    <p>Easily navigate through iOS Apps from AltStore sources with our intuitive interface.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>􀚈 Sideload Apps</h3>
+                    <p>Install apps not available on the App Store with just a few taps.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>􀍟 Manage Your Certificates</h3>
+                    <p>Import your own certificates or use our own!</p>
+                </div>
+                <div class="feature-card">
+                    <h3>􀋃 Full Freedom</h3>
+                    <p>Configure every bit of information in your iPA and inject DyLibs.</p>
+                </div>
+        </section>
+
+        <section id="tutorial" class="section">
+            <h2>How to Use Sierra</h2>
+            <div class="tutorial-step">
+                <img src="assets/images/download_icon.png" alt="Step 1">
+                <div>
+                    <h3>Step 1: Download Sierra</h3>
+                    <p>Visit our website on your iOS device and sideload the Sierra app or download the iPA file.</p>
+                </div>
+            </div>
+            <div class="tutorial-step">
+                <img src="assets/images/browse_icon.png" alt="Step 2">
+                <div>
+                    <h3>Step 2: Browse IPA Files</h3>
+                    <p>Open Sierra and browse through the available IPA files from various sources.</p>
+                </div>
+            </div>
+            <div class="tutorial-step">
+                <img src="assets/images/sideload_icon.png" alt="Step 3">
+                <div>
+                    <h3>Step 3: Sideload Your App</h3>
+                    <p>Select the app you want to install and follow the sideloading instructions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial">
+                <p>"Sierra.app is likely the fastest iPA Signer ever created! "</p>
+                <p class="testimonial-author">- GeoSn0w.</p>
+            </div>
+            <div class="testimonial">
+                <p>"Truly a game changer. More polished and user friendly than almost all signers under the sun."</p>
+                <p class="testimonial-author">- BrocoDev</p>
+            </div>
+        </section>
+
+        <section id="faq" class="section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <p class="faq-question">Is Sierra safe to use?</p>
+                <p>Yes, Sierra is designed with security in mind. We don't host any malicious apps and provide options for using your own certificates. Sierra prides itself in standing out amongst the sea of scams and cash grabs.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Do I need to jailbreak my device to use Sierra?</p>
+                <p>No, Sierra works on non-jailbroken devices. It uses sideloading techniques that are allowed by iOS.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">How often are new apps added to Sierra?</p>
+                <p>We regularly update our app catalog. New apps are typically added weekly, depending on availability and demand. Additionally, you can use any existing AltStore repository.</p>
+            </div>
+        </section>
+
+        <section class="app-preview">
+            <h1>See Sierra in Action</h1>
+            <div class="previews">
+                <img src="https://placeholder.com/300x500" alt="Sierra App Preview">
+                <img src="https://placeholder.com/300x500" alt="Sierra App Preview">
+                <img src="https://placeholder.com/300x500" alt="Sierra App Preview">
+            </div>
+        </section>
+
+        <section style="margin-top: 60px;" id="giveaways">
+            <h2>Giveaways</h2>
+            <div class="giveaway">
+                <h1>❗Want Sierra VIP for free?❗</h1>
+
+                <p>
+                <br>1. Follow us on X(Twitter)!
+                <br>2. Like our post!
+                <br>3. Repost our post!
+                <br>4. Tag a friend!
+                </p>
+
+                <h2>A giveaway is held once a week, so be sure to check in regularly!</h2>
+
+                <div onclick="openUrlInNewTab('https://x.com/SierraSigned')" class="cta-button" style="height: 10px; display: flex; justify-content: center; align-items: center;">
+                    <p style="margin: 0">Visit our Twitter</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sierra App. All rights reserved.</p>
+        <p>Website Designed by BrocoDev</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+        
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+        </script>
+</body>
+</html>
